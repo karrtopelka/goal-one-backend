@@ -1,0 +1,34 @@
+<h2>Add new slut</h2>
+<form action='/add' method='POST'>
+  <div class='input-field'>
+    <input placeholder='Katya Stern' id='name' name='name' type='text' class='validate' required />
+    <label for='name'>Slut Name</label>
+    <span class='helper-text' data-error='Enter name'></span>
+  </div>
+  <div class='input-field'>
+    <input
+      placeholder='500'
+      id='price'
+      name='price'
+      type='number'
+      class='validate'
+      required
+      min='1'
+    />
+    <label for='price'>Price</label>
+    <span class='helper-text' data-error='Enter price'></span>
+  </div>
+  <div class='input-field'>
+    <input
+      placeholder='https://localhost:3000'
+      id='img'
+      name='img'
+      type='text'
+      class='validate'
+      required
+    />
+    <label for='img'>Image url</label>
+    <span class='helper-text' data-error='Enter URL'></span>
+  </div>
+  <button class='btn btn-primary'>Add Slut</button>
+</form>

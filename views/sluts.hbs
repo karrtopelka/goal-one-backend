@@ -1,0 +1,25 @@
+<h1>Sluts</h1>
+
+{{#if sluts.length}}
+  {{#each sluts}}
+    <div class='row'>
+      <div class='col s6 offset-s3'>
+        <div class='card'>
+          <div class='card-image'>
+            <img src='{{img}}' alt={{name}} />
+          </div>
+          <div class='card-content'>
+            <span class='card-title'>{{name}}</span>
+            <p class='price'>{{price}}</p>
+          </div>
+          <div class='card-action'>
+            <a href='/sluts/{{id}}' target='_blank'>About this slut</a>
+            <a href='/sluts/{{id}}/edit?allow=true'>Edit this slut</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <p>No sluts available</p>
+{{/if}}

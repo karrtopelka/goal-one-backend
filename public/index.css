@@ -1,0 +1,27 @@
+.nav-wrapper {
+  padding: 0 2rem;
+}
+
+.price {
+  font-size: 2rem;
+}
+
+.slut {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slut h1 {
+  margin-bottom: 2rem;
+}
+
+.slut img {
+  max-width: 600px;
+  height: auto;
+}
+
+.slut .price.big {
+  font-size: 2.5rem;
+}

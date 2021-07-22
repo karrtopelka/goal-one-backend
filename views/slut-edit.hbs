@@ -1,0 +1,29 @@
+<h2>Edit slut {{slut.name}}</h2>
+<form action='/sluts/edit' method='POST'>
+  <div class='input-field'>
+    <input id='name' name='name' type='text' class='validate' required value='{{slut.name}}' />
+    <label for='name'>Slut Name</label>
+    <span class='helper-text' data-error='Enter name'></span>
+  </div>
+  <div class='input-field'>
+    <input
+      id='price'
+      name='price'
+      type='number'
+      class='validate'
+      required
+      min='1'
+      value='{{slut.price}}'
+    />
+    <label for='price'>Price</label>
+    <span class='helper-text' data-error='Enter price'></span>
+  </div>
+  <div class='input-field'>
+    <input id='img' name='img' type='text' class='validate' required value='{{slut.img}}' />
+    <label for='img'>Image url</label>
+    <span class='helper-text' data-error='Enter URL'></span>
+  </div>
+
+  <input type='hidden' name='id' value='{{slut.id}}' />
+  <button class='btn btn-primary'>Edit</button>
+</form>
