@@ -38,6 +38,29 @@ class Cart {
       });
     });
   }
+  
+  static async remove(id) {
+    const cart = await Cart.fetch();
+    const idx = cart.sluts.findIndex(s => s.id === id);
+    const slut = cart.sluts[idx];
+
+    if (slut.count === 1) {
+      cart.sluts.splice(idx, 1);
+    } else {
+      cart.sluts[idx].count--;
+    }
+
+    cart.price -= slut.price;
+
+    return new Promise((resolve, reject) => {
+      fs.writeFile(p, JSON.stringify(cart), (err) => {
+        if (err) {
+          return reject(err);
+        }
+        resolve(cart);
+      });
+    });
+  }
 }
 
 module.exports = Cart;

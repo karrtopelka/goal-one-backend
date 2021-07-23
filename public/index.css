@@ -6,6 +6,10 @@
   font-size: 2rem;
 }
 
+.table.price {
+  font-size: initial;
+}
+
 .slut {
   width: 100%;
   display: flex;

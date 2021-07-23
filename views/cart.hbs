@@ -1,1 +1,29 @@
 <h1>Cart</h1>
+
+<div id='cart'>
+  {{#if sluts.length}}
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Count</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        {{#each sluts}}
+          <tr>
+            <td>{{name}}</td>
+            <td class="table price">{{price}}</td>
+            <td>{{count}}</td>
+            <td>
+              <button class='btn btn-small pink js-remove' data-id='{{id}}'>Delete</button>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <p class='flow-text'><strong>Total price:</strong> <span class='price'>{{price}}</span></p>
+  {{else}}
+    <p>Cart is free</p>
+  {{/if}}
+</div>
