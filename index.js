@@ -1,12 +1,29 @@
 const express = require('express');
 const path = require('path');
+require('dotenv').config();
 const exphbs = require('express-handlebars');
+const mongoose = require('mongoose');
+
 const homeRoute = require('./routes/home');
 const slutsRoute = require('./routes/sluts');
 const addRoute = require('./routes/add');
 const cartRoute = require('./routes/cart');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+const uri = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.zj8jn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+
+const start = async () => {
+  try {
+    await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+    app.listen(3000, () => {
+      console.log(`Server is started on port => ${PORT}`);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+
+}
 
 const hbs = exphbs.create({
   defaultLayout: 'main',
@@ -25,8 +42,4 @@ app.use('/sluts', slutsRoute);
 app.use('/add', addRoute);
 app.use('/cart', cartRoute);
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(3000, () => {
-  console.log(`Server is started on port => ${PORT}`);
-});
+start()
