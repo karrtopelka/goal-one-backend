@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars');
 const homeRoute = require('./routes/home');
 const slutsRoute = require('./routes/sluts');
 const addRoute = require('./routes/add');
+const cartRoute = require('./routes/cart');
 
 const app = express();
 
@@ -17,9 +18,11 @@ app.set('views', 'views');
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
+
 app.use('/', homeRoute);
 app.use('/sluts', slutsRoute);
 app.use('/add', addRoute);
+app.use('/cart', cartRoute);
 
 const PORT = process.env.PORT || 3000;
 
