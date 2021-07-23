@@ -25,5 +25,9 @@
   </div>
 
   <input type='hidden' name='id' value='{{slut.id}}' />
-  <button class='btn btn-primary'>Edit</button>
+  <button type='submit' class='btn btn-primary'>Edit</button>
+</form>
+<form action="/sluts/remove" method='POST'>
+  <input type='hidden' name='id' value='{{slut.id}}' />
+  <button type='submit' class='btn btn-primary red'>Delete</button>
 </form>
