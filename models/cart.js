@@ -38,10 +38,10 @@ class Cart {
       });
     });
   }
-  
+
   static async remove(id) {
     const cart = await Cart.fetch();
-    const idx = cart.sluts.findIndex(s => s.id === id);
+    const idx = cart.sluts.findIndex((s) => s.id === id);
     const slut = cart.sluts[idx];
 
     if (slut.count === 1) {

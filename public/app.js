@@ -1,13 +1,13 @@
-const toCurrency = price => {
+const toCurrency = (price) => {
   return new Intl.NumberFormat('en-US', {
     currency: 'USD',
     style: 'currency',
-  }).format(price)
+  }).format(price);
 };
 
 document.querySelectorAll('.price').forEach((node) => {
   node.textContent = toCurrency(node.textContent);
-})
+});
 
 const $cart = document.querySelector('#cart');
 if ($cart) {
@@ -36,7 +36,9 @@ if ($cart) {
               })
               .join('');
             $cart.querySelector('tbody').innerHTML = htmlTable;
-            $cart.querySelector('.flow-text').querySelector('.price').textContent = toCurrency(cart.price);
+            $cart.querySelector('.flow-text').querySelector('.price').textContent = toCurrency(
+              cart.price,
+            );
           } else {
             $cart.innerHTML = '<p>Cart is empty</p>';
           }
