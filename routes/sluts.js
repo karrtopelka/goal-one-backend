@@ -3,7 +3,8 @@ const Slut = require('../models/slut');
 const router = Router();
 
 router.get('/', async (req, res) => {
-  const sluts = await Slut.find();
+  const sluts = await Slut.find().populate('userId');
+
   res.render('sluts', {
     title: 'Sluts page',
     isSluts: true,
